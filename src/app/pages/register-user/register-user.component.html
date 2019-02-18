@@ -1,0 +1,108 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    <!-- titulo del componente  -->
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Home</font>
+                    </font>
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Casa</font>
+                            </font>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Registrar Usuario</font>
+                        </font>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Usuario</font>
+                </font>
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Colapso">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="retirar">
+                  <i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="card-body col-md-12">
+            <!-- aqui va todo el contenido -->
+            <div>
+                <div class="col-md-12">
+                    <!-- general form elements disabled -->
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Datos del Nuevo Usuario</font>
+                                </font>
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <form role="form">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
+                                    <input type="text" #nombre class="form-control" placeholder="Escriba aqui ..." #Nombre>
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apellido</font></font></label>
+                                    <input type="text" #nombre class="form-control" placeholder="Escriba aqui ..." #Apellido>
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Correo</font></font></label>
+                                    <input type="text" #precio class="form-control" placeholder="Escriba aqui ..." #Correo>
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contraseña</font></font></label>
+                                    <input type="password" #color class="form-control" placeholder="Escriba aqui ..." #password >
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Repita contraseña</font></font></label>
+                                    <input type="password" #color class="form-control" placeholder="Escriba aqui ..." #password2>
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Telefono</font></font></label>
+                                    <input type="text" #color class="form-control" placeholder="Escriba aqui ..." #Telefono>
+                                </div>
+                          
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cargo dentro de la empresa</font></font></label>
+                                    <select class="form-control" #tipo (change)="cambiartipo(tipo.value)" >
+                                        <option value="admin" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>Administrador</font></option>
+                                        <option value="gerente" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>Gerente</font></option>
+                                  </select>
+                                </div>
+                                <div >
+                                    <button class="btn btn-dark btn-block" type="button" (click)="validar(Nombre.value,Apellido.value,Correo.value,Telefono.value,password.value,password2.value)">Registrar Usuario</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del contenido -->
+        </div>
+    </div>
+</section>

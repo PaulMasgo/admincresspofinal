@@ -1,0 +1,133 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    <!-- titulo del componente  -->
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Usuarios registrados</font>
+                    </font>
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Usuarios</font>
+                            </font>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Buscar</font>
+                        </font>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="card">
+        <div class="card-dark">
+            <!-- contenido -->
+            <div class="card-header">
+                <h3 class="card-title">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Lista usuarios Registrados</font>
+                    </font>
+                </h3>
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 250px;">
+                        <input type="text" name="table_search" class="form-control float-right"  #parametro placeholder="Buscar"  (keyup)="buscar(parametro.value)">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div class="col-sm-12">
+                <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                    <thead class="table-info">
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Nombre</font>
+                                </font>
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Correo</font>
+                                </font>
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Estado</font>
+                                </font>
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Telefono</font>
+                                </font>
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Tipo</font>
+                                </font>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr role="row" class="odd" *ngFor="let usuario of usuarios">
+                            <td class="sorting_1">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">{{usuario.nombre}}</font>
+                                </font>
+                            </td>
+                            <td>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">{{usuario.correo}}</font>
+                                </font>
+                            </td>
+                            <td>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">{{usuario.estado}}</font>
+                                </font>
+                            </td>
+                            <td>
+                                <font style="vertical-align: inherit;"  *ngIf="!usuario.telefono" >
+                                    <font style="vertical-align: inherit;">No registrado</font>
+                                </font>
+                                <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">{{usuario.telefono}}</font>
+                                </font>
+                            </td>
+                            <td>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">{{usuario.tipo}}</font>
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+            <!-- fin del contenido  -->
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                    Pie de página
+                </font>
+            </font>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

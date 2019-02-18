@@ -1,0 +1,100 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    <!-- titulo del componente  -->
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Home</font>
+                    </font>
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Casa</font>
+                            </font>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Página en blanco</font>
+                        </font>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Título</font>
+                </font>
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Colapso">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="retirar">
+                  <i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="card-body col-md-12">
+            <!-- aqui va todo el contenido -->
+            <div>
+                <div class="col-md-12">
+                    <!-- general form elements disabled -->
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Datos de la prenda</font>
+                                </font>
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <form role="form">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
+                                    <input type="text" #nombre class="form-control" placeholder="Escriba aqui ...">
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Precio S/.</font></font></label>
+                                    <input type="number" #precio class="form-control" placeholder="Escriba aqui ...">
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Color</font></font></label>
+                                    <input type="text" #color class="form-control" placeholder="Escriba aqui ...">
+                                </div>
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descripción</font></font></label>
+                                    <textarea #descripcion class="form-control" rows="3" placeholder="Escriba aqui ..."></textarea>
+                                </div>
+
+                                <!-- select -->
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Categoria</font></font></label>
+                                    <select class="form-control" (change)="obtenerCodigo($event.target.value)">
+                                        <option *ngFor="let item of categoria" [value]="item._id" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>{{item.nombre}}</font></option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block" (click)="registrarProducto(nombre.value,descripcion.value,color.value,precio.value)">Siguiente</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del contenido -->
+        </div>
+    </div>
+</section>

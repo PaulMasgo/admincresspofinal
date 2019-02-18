@@ -1,0 +1,113 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    <!-- titulo del componente  -->
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Agregar Producto</font>
+                    </font>
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Tallas</font>
+                            </font>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Página en blanco</font>
+                        </font>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Título</font>
+                </font>
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Colapso">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="retirar">
+                  <i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Contendio de la pagina  -->
+            <div class="form-group">
+                <label for="inputEmail3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cuantas tallas desea registrar?</font></font></label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" #numero placeholder="Numero" (click)="aumentar(numero.value)">
+                </div>
+            </div><br>
+            <!-- form start -->
+            <div class="row">
+                <div class="col-md-3" *ngFor="let item of repetir">
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Agregar Talla</font>
+                                </font>
+                            </h3>
+                        </div>
+                    </div>
+                    <form class="form-horizontal">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputEmail3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Elija la talla</font></font></label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" #talla>
+                                  <option value="S" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>S</font></option>
+                                  <option value="M" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>M</font></option>
+                                  <option value="L" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>L</font></option>
+                                  <option value="X" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>X</font></option>
+                                  <option value="XL" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>XL</font></option>
+                                  <option value="28" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>28</font></option>
+                                  <option value="30" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>30</font></option>
+                                  <option value="32" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>32</font></option>
+                                 </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cantidad</font></font></label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" #cantidad placeholder="Numero">
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-danger btn-block" (click)="registrar(talla.value,cantidad.value)">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <div>
+                <button type="button" class="btn btn-dark btn-block" (click)="finalizar()">Finalizar</button>
+            </div>
+
+
+            <!-- Fin del contenido -->
+        </div>
+        <!-- /.card-body -->
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

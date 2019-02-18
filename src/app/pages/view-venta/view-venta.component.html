@@ -1,0 +1,99 @@
+<div class="invoice p-3 mb-3">
+  <!-- title row -->
+  <div class="row">
+    <div class="col-12">
+      <h4>
+        <i class="fa fa-globe"></i> Detalles de Venta
+        <small class="float-right">Fecha: {{Venta.Fecha}}</small>
+      </h4>
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- info row -->
+  <div class="row invoice-info">
+    <div class="col-sm-4 invoice-col">
+      
+      <address>
+        <strong>Datos del Usuario</strong><br>
+        Nombre: {{Venta.usuario.nombre}}<br>
+        Domicilio: {{Venta.direccion.Direccion}}<br>
+        Telefono: {{Venta.usuario.telefono}}<br>
+        Correo: {{Venta.usuario.correo}}
+      </address>
+      <h5>Estado: 
+      <span *ngIf="Venta.estado==='espera'" class="badge bg-danger">ESPERA</span>
+      <span  *ngIf="Venta.estado==='confirmado'" class="badge bg-info">CONFIRMADO</span>
+      <span  *ngIf="Venta.estado==='entregado'"class="badge bg-success">ENTREGADO</span></h5>
+      <br>
+    </div>
+  </div>
+
+  <!-- Table row -->
+  <div class="row">
+    <div class="col-12 table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>N°</th>
+          <th>Producto</th>
+          <th>Talla</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Subtotal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let detalle of Detalles;let i=index" > 
+          <td>{{i+1}}</td>
+          <td>{{detalle.producto.nombre}}</td>
+          <td>{{detalle.talla}}</td>
+          <td>{{detalle.cantidad}}</td>
+          <td>S/. {{detalle.precio}}</td>
+          <td>S/. {{detalle.cantidad * detalle.precio}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <!-- accepted payments column -->
+    <div class="col-6">
+    
+    </div>
+    <!-- /.col -->
+    <div class="col-6">
+
+      <div class="table-responsive">
+        <table class="table">
+          <tbody><tr>
+            <th style="width:50%">Subtotal:</th>
+            <td>S/. {{Venta.monto}}</td>
+          </tr>
+          <tr>
+            <th>Costo de envio:</th>
+            <td>S/. 15.00</td>
+          </tr>
+          <tr>
+            <th>Total:</th>
+            <td>S/. {{Venta.monto + 15}}</td>
+          </tr>
+        </tbody>
+      </table><br>
+      <div style="text-align: center"> 
+        <h3>Modificar Estado</h3>
+        <select name="" #state class="btn btn-dark btn-block" (change)="cambiarEstado(state.value)">
+          <option value="confirmado">Confirmado</option>
+          <option value="entregado">Entregado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+      </div>
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+  <!-- this row will not appear when printing -->
+  <div >
+    
+</div>
