@@ -1,3 +1,95 @@
-<p>
-  cupon works!
-</p>
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    <!-- titulo del componente  -->
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Cupones</font>
+                    </font>
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Ver</font>
+                            </font>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Cupones</font>
+                        </font>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <!-- Main content -->
+  <section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Historial de cupones</font>
+                </font>
+            </h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Colapso">
+                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="retirar">
+                  <i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Contendio de la pagina  -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Cupones registrados</h3>
+              </div>
+              <div class="card-body p-0">
+                <table class="table table-striped">
+                  <tbody><tr>
+                    <th style="width: 10px">N°</th>
+                    <th>Nombre</th>
+                    <th>Monto Descuento</th>
+                    <th>Estado</th>
+                    <th>Activar o Desactivar</th>
+                  </tr>
+                  <tr *ngFor="let item of cupones;let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.descuento}}</td>
+                    <td>{{item.estado}}</td>
+                    <td  *ngIf="item.estado ===true"   ><button  class="btn btn-danger btn-block" (click)="cambiarDesactivado(item._id)"  >Desactivar</button></td>
+                    <td *ngIf="item.estado ===false" > <button class="btn btn-info btn-block" (click)="cambiarActivado(item._id)"  >Activar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+            <!-- Fin del contenido -->
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                    Pie de página
+                </font>
+            </font>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+  
+  </section>
+  <!-- /.content -->
+  
+  
+  
+  

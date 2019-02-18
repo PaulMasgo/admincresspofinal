@@ -11,6 +11,9 @@ import { VentasComponent } from './pages/ventas/ventas.component';
 import { ViewVentaComponent } from './pages/view-venta/view-venta.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { CuponComponent } from './pages/cupon/cupon.component';
+import { CuponRegisterComponent } from './pages/cupon-register/cupon-register.component';
+import { CuponUpdateComponent } from './pages/cupon-update/cupon-update.component';
 
 
 const appRoutes:Routes = [ 
@@ -29,6 +32,9 @@ const appRoutes:Routes = [
             {path:'venta/:id',component:ViewVentaComponent},
             {path:'usuario',component:UsuariosComponent},
             {path:'usuarioRegister',component:RegisterUserComponent},
+            {path:'cupon',component:CuponComponent},
+            {path:'cuponRegister',component:CuponRegisterComponent},
+            {path:'usuarioUpdate',component:CuponUpdateComponent},
             {path:'',redirectTo:'/products',pathMatch:'full'}
         ]
     },

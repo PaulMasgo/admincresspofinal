@@ -16,18 +16,34 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  verificar(usuario:Usuario){
+    console.log(usuario);
+      switch (usuario.tipo) {
+        case 'admin':
+            this._usuarioService.UsuarioActivo = usuario;
+            swal('Bienvenido', `Hola ${usuario.nombre}` ,'success');
+            localStorage.setItem('usuario',JSON.stringify(this._usuarioService.UsuarioActivo));
+            this.router.navigate(['/products'])        
+          break;
+
+        case 'gerente':
+          this._usuarioService.UsuarioActivo = usuario;
+          swal('Bienvenido', `Hola ${usuario.nombre}` ,'success');
+          localStorage.setItem('usuario',JSON.stringify(this._usuarioService.UsuarioActivo));
+          this.router.navigate(['/products'])        
+        break;
+      
+        default:
+          break;
+      }
+  }
+
+
   inicioSesion(correo,password){
     let usuario = new Usuario(null,correo,password)
     this._usuarioService.login(usuario)
     .subscribe((res:any) => {
-      if(res.ok === true && res.usuario.tipo == 'administrador'){
-        this._usuarioService.UsuarioActivo = res.usuario;
-        swal('Bienvenido', `Hola ${res.usuario.nombre}` ,'success');
-        localStorage.setItem('usuario',JSON.stringify(this._usuarioService.UsuarioActivo));
-        this.router.navigate(['/home'])
-      }else{
-        swal('Error','El usuario o contraseña son incorrectos','error')
-      } 
+      this.verificar(res.usuario);
     })
   }
 
