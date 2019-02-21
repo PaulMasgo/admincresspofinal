@@ -1,4 +1,5 @@
 import { Usuario } from './usuario.models';
+import { Direccion } from './direccion.model';
 
 export class Venta {
     constructor(
@@ -9,8 +10,10 @@ export class Venta {
         public boleta?:String,
         public codigo?:String,
         public descuento?:Number,
-        public direccion?:String,
-        public _id?:string
+        public direccion?:Direccion,
+        public _id?:string,
+        public tipo?:string
+
     ){
 
     }     

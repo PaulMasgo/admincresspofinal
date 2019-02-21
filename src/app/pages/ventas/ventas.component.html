@@ -59,6 +59,7 @@
                   <th>Codigo</th>
                   <th>Fecha</th>
                   <th>Estado</th>
+                  <th>Tipo</th>
                   <th>Total</th>
                   <th>Ver</th>
                 </tr>
@@ -66,10 +67,12 @@
                   <td>{{i + 1}}</td>
                   <td>{{item.codigo}}</td>
                   <td>{{item.Fecha}}</td>
-                  <td><span *ngIf="item.estado==='espera'" class="badge bg-danger">{{item.estado}}</span>
+                  <td><span *ngIf="item.estado==='espera'" class="badge bg-warning">{{item.estado}}</span>
                      <span  *ngIf="item.estado==='confirmado'" class="badge bg-info">{{item.estado}}</span>
                     <span  *ngIf="item.estado==='entregado'"class="badge bg-success">{{item.estado}}</span>
+                    <span  *ngIf="item.estado==='cancelado'"class="badge bg-danger">{{item.estado}}</span>
                   </td>
+                  <td>{{item.tipo}}</td>
                   <td>S/. {{item.monto}}</td>
                   <td><button class="btn btn-dark btn-block" [routerLink]="['/venta',item._id]"  >Ver</button></td>
                 </tr>

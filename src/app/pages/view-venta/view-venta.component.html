@@ -21,9 +21,10 @@
         Correo: {{Venta.usuario.correo}}
       </address>
       <h5>Estado: 
-      <span *ngIf="Venta.estado==='espera'" class="badge bg-danger">ESPERA</span>
+      <span *ngIf="Venta.estado==='espera'" class="badge bg-warning">ESPERA</span>
       <span  *ngIf="Venta.estado==='confirmado'" class="badge bg-info">CONFIRMADO</span>
-      <span  *ngIf="Venta.estado==='entregado'"class="badge bg-success">ENTREGADO</span></h5>
+      <span  *ngIf="Venta.estado==='entregado'"class="badge bg-success">ENTREGADO</span>
+      <span  *ngIf="Venta.estado==='cancelado'"class="badge bg-danger">CANCELADO</span></h5>
       <br>
     </div>
   </div>
@@ -66,16 +67,19 @@
       <div class="table-responsive">
         <table class="table">
           <tbody><tr>
-            <th style="width:50%">Subtotal:</th>
-            <td>S/. {{Venta.monto}}</td>
+            
           </tr>
-          <tr>
+          <tr *ngIf="Venta.tipo === 'visa' || Venta.tipo === 'entrega'">
             <th>Costo de envio:</th>
             <td>S/. 15.00</td>
           </tr>
+          <tr >
+            <th *ngIf="Venta.descuento > 0">Descuento</th>
+            <td>S/. {{Venta.descuento}}</td>
+          </tr>
           <tr>
             <th>Total:</th>
-            <td>S/. {{Venta.monto + 15}}</td>
+            <td>S/. {{Venta.monto}}</td>
           </tr>
         </tbody>
       </table><br>
